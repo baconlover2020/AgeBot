@@ -29,12 +29,8 @@ async def on_message(message):
         for categoria in os.listdir(pasta_categorias):
             await message.channel.send(f"Adicionando Categoria: {categoria}")
             adicionar_categoria(os.path.join(pasta_categorias, categoria))
-            shutil.move(os.path.join(pasta_categorias, categoria), "adicionados/"+ categoria)
-            #shutil.rmtree(os.path.join(pasta_categorias,categoria), ignore_errors=True)
+            ##shutil.move(os.path.join(pasta_categorias, categoria), "adicionados/"+ categoria)
+            shutil.rmtree(os.path.join(pasta_categorias,categoria), ignore_errors=True)
             await message.channel.send(f"A categoria \"{categoria}\" foi adicionada com êxito!")
                 
-                
-
-
-
 client.run(token)
